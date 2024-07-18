@@ -1,0 +1,187 @@
+.aboutContainer {
+  height: 100%;
+  overflow-x: hidden;
+  .svgBox {
+    display: none;
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    width: 33.333333%;
+
+    @media (min-width: 1024px) {
+      display: block;
+    }
+    @media (min-width: 1280px) {
+      width: 50%;
+    }
+  }
+  .secondContainer {
+    overflow: hidden;
+    height: 100%;
+
+    @media (min-width: 1024px) {
+      display: flex;
+    }
+
+    .textBox {
+      display: flex;
+      padding: 1rem;
+      flex-direction: column;
+      gap: 6rem;
+
+      @media (min-width: 640px) {
+        padding: 2rem;
+      }
+      @media (min-width: 768px) {
+        padding: 3rem;
+        gap: 8rem;
+      }
+      @media (min-width: 1024px) {
+        padding: 5rem;
+        padding-right: 0;
+        gap: 12rem;
+        width: 66.666667%;
+      }
+      @media (min-width: 1280px) {
+        padding: 12rem;
+        gap: 16rem;
+        width: 50%;
+      }
+    }
+    .biographBox {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      justify-content: center;
+
+      img {
+        object-fit: cover;
+        border-radius: 9999px;
+        width: 7rem;
+        height: 7rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 700;
+      }
+      p {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+      span {
+        font-style: italic;
+      }
+      .bioSignSvg {
+        align-self: flex-end;
+      }
+    }
+    .skillsBox {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      justify-content: center;
+
+      h1 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 700;
+      }
+      .skillsList {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .skillItem {
+          padding: 0.5rem;
+          border-radius: 0.25rem;
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          color: #ffffff;
+          background-color: #000000;
+          cursor: pointer;
+
+          &:hover {
+            color: #000000;
+            background-color: #ffffff;
+          }
+        }
+      }
+    }
+    .expBox {
+      display: flex;
+      padding-bottom: 12rem;
+      flex-direction: column;
+      gap: 3rem;
+      justify-content: center;
+
+      h1 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 700;
+      }
+      .expListItem {
+        display: flex;
+        justify-content: space-between;
+        height: 12rem;
+        .left {
+          width: 33.333333%;
+        }
+        .jobTitle {
+          padding: 0.75rem;
+          border-bottom-right-radius: 0.5rem;
+          border-bottom-left-radius: 0.5rem;
+          font-weight: 600;
+          background-color: #ffffff;
+        }
+        .jobDesc {
+          padding: 0.75rem;
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          font-style: italic;
+        }
+        .jobDate {
+          padding: 0.75rem;
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          font-weight: 600;
+          color: #f87171;
+        }
+        .jobComapny {
+          padding: 0.25rem;
+          border-radius: 0.25rem;
+          width: fit-content;
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          font-weight: 600;
+          background-color: #ffffff;
+        }
+
+        .center {
+          display: flex;
+          justify-content: center;
+          width: 16.666667%;
+          .line {
+            position: relative;
+            border-radius: 0.25rem;
+            width: 0.25rem;
+            height: 100%;
+            background-color: #6b7280;
+            .lineCircle {
+              position: absolute;
+              left: -0.5rem;
+              border-radius: 9999px;
+              border: 2px solid #f87171;
+              width: 1.25rem;
+              height: 1.25rem;
+              background-color: #ffffff;
+            }
+          }
+        }
+        .right {
+          width: 33.333333;
+        }
+      }
+    }
+  }
+}
