@@ -86,7 +86,7 @@ const About = () => {
             students at Khane Noor. It&#39;s immensely fulfilling to empower the
             next generation of developers on their journey.
           </p>
-          <motion.h2 transition={{ delay: 0.2 }}>SKILLS</motion.h2>
+          <motion.h2  transition={{ delay: 0.2 }}>SKILLS</motion.h2>
           <motion.div className='skillsBox'>
             {skillItems.map((item, i) => {
               return (

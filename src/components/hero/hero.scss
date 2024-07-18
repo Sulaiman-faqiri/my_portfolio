@@ -80,6 +80,11 @@
       //   width: 30%;
       // }
     }
+    @include tablet{
+      img{
+        width: 55%;
+      }
+    }
        @include mobile {
       height: 50%;
       width: 100%;
@@ -90,11 +95,7 @@
         width: 90%;
       }
     }
-    @include tablet{
-      img{
-        width: 55%;
-      }
-    }
+    
 
  
   }

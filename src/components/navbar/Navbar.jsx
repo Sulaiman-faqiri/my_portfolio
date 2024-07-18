@@ -17,8 +17,8 @@ const Navbar = () => {
           SQ
         </motion.span>
         <div className='social'>
-          <a href='#'>
-            <img src='/facebook.png' alt='' />
+          <a href='https://github.com/Sulaiman-faqiri' target='blank'>
+            <img src='/github-logo.png' alt='' />
           </a>
           <a href='#'>
             <img src='/instagram.png' alt='' />

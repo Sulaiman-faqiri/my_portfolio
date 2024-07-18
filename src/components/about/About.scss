@@ -35,6 +35,9 @@
     margin: 10px 0px;
     padding: 0;
     font-size: 25px;
+    @include mobile{
+      padding: 0 20px;
+    }
   }
   .aboutBox {
     display: flex;
@@ -89,6 +92,7 @@
     }
     @include mobile {
       gap: 8px;
+padding: 20px;
 
       .skillsItem {
         padding: 5px;

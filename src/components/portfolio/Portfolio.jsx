@@ -1,39 +1,84 @@
 import { useRef } from 'react'
 import './portfolio.scss'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
-import buytech from '../../../public/projects/buytech.png'
-import rentup from '../../../public/projects/rent.png'
-import nike from '../../../public/projects/nike.png'
-import omni from '../../../public/projects/omni.png'
+// import buytech from '../../../public/projects/buytech.png'
+// import rentup from '../../../public/projects/rent.png'
+// import nike from '../../../public/projects/nike.png'
+// import omni from '../../../public/projects/omni.png'
 const items = [
   {
     id: 1,
-    title: 'React Commerce',
-   
-    // img: 'https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
-    img: buytech,
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
+    title: 'Full Stack E-Commerce App',
+    img: '/projects/buytech.png?url',
+    desc: `
+    BuyTech is an ecommerce platform for selling tech items like mice, computers, keyboards, and iPads.
+Technologies Used:
+    `,
+    technologies: ['Next.js', 'MongoDB', 'Mongoose', 'MUI', 'SCSS'],
+    features: `
+  Landing Page:
+  Hero Section:
+  Showcases featured products.
+  Why Choose Us:
+  Highlights benefits like free shipping, money-back guarantee, online support, and flexible payment.
+  Exclusive Discounts:
+  Lists discounted items.
+  Complete Collection:
+  Displays all products.
+  User Authentication:
+  Login/Signup: Required for ordering.
+  Orders Page: View order history.
+  Admin Dashboard:
+  Overview: Stats and revenue charts.
+  Users Management: Add, update, delete, search, and paginate users.
+  Products Management: Manage products with add, update, delete, search, and pagination.
+  Categories Management: Add and delete categories.
+  Orders Management: Update order status and delete orders.
+  Settings: Update admin info.
+  `,
+    demoLink: 'https://buy-tech-app.vercel.app',
   },
   {
     id: 2,
-    title: 'Next.js Blog',
-    // img: 'https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
-    img: rentup,
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
+    title: 'Rent Up',
+
+    img: '/projects/rent.png?url',
+    desc: `RentUp is a modern website designed to help you find your next home effortlessly. Built on React.js, it offers seamless browsing across sections, robust search functionalities, and detailed listings for apartments, houses, and rental properties. Simplify your search and discover your ideal living space with RentUp.  `,
+    technologies: ['React.js', 'JavaScript (ES6+)', 'CSS'],
+    features: `Advanced Search: Filter listings by location, price range, and property type.
+Detailed Listings: Explore property details with photos and amenities.
+Responsive Design: Access RentUp seamlessly across devices.
+Discover your ideal living space effortlessly with RentUp's intuitive features and responsive interface.`,
+    demoLink: 'https://rent-up-react-app.vercel.app',
   },
   {
     id: 3,
-    title: 'Vanilla JS App',
-    img: nike,
-    // img: 'https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
+    title: 'Sneakers',
+    img: '/projects/nike.png?url',
+
+    desc: 'Explore the world of Nike shoes with our sleek and dynamic ecommerce landing page. Crafted with HTML and CSS, our site offers:',
+    features: `Stylish Collections: Browse the latest Nike shoe collections with ease.
+Responsive Design: Enjoy a seamless shopping experience on any device.
+User-Friendly Navigation: Find your perfect pair quickly and effortlessly.`,
+    technologies: ['HTML', 'CSS'],
+    demoLink: 'https://nike-store-landing-page-phi.vercel.app',
   },
   {
     id: 4,
-    title: 'Music App',
-    img:omni ,
-    // img: 'https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
+    title: 'Omnifood',
+    img: '/projects/nike.png?url',
+
+    desc: `Omni Food brings gourmet dining to your doorstep with a sophisticated and user-centric landing page. Whether you're craving a quick bite or planning a special occasion, Omni Food offers:
+
+Exquisite Cuisine: Explore a diverse menu of gourmet dishes crafted by top chefs.
+Effortless Ordering: Seamless online ordering with secure payment options.
+Fast Delivery: Enjoy prompt delivery services to your doorstep.`,
+    features: `Menu Exploration: Easily browse through a variety of gourmet dishes and beverages.
+Order Tracking: Stay updated with real-time order status and delivery updates.
+Promotions and Discounts: Access exclusive deals and discounts on selected items.
+Customer Support: 24/7 support to assist with orders and inquiries.`,
+    technologies: ['HTML', 'CSS', 'Responsive Design'],
+    demoLink: 'https://food-landing-page-one.vercel.app',
   },
 ]
 
@@ -56,8 +101,21 @@ const Single = ({ item }) => {
           <motion.div className='textContainer' style={{ y }}>
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
-            <button>
-            See Demo</button>
+            <h3>Features</h3>
+            {item.features && <p className='features'> {item.features}</p>}
+            <h3>Technologies</h3>
+            <div className='skillsBox'>
+              {item.technologies?.map((techItem) => {
+                return (
+                  <div key={techItem} className='skillsItem'>
+                    {techItem}
+                  </div>
+                )
+              })}
+            </div>
+            <a href={item.demoLink} target='_blank' rel='noopener noreferrer'>
+              <button>See Demo</button>
+            </a>
           </motion.div>
         </div>
       </div>
