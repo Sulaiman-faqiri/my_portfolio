@@ -66,7 +66,7 @@ User-Friendly Navigation: Find your perfect pair quickly and effortlessly.`,
   {
     id: 4,
     title: 'Omnifood',
-    img: '/projects/nike.png?url',
+    img: '/projects/omni.png?url',
 
     desc: `Omni Food brings gourmet dining to your doorstep with a sophisticated and user-centric landing page. Whether you're craving a quick bite or planning a special occasion, Omni Food offers:
 
